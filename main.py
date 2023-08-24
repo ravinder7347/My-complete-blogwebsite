@@ -9,7 +9,6 @@ from flask_login import UserMixin, login_user, LoginManager, current_user, logou
 from forms import CreatePostForm, Registerform, Loginform, Commentform
 from flask_gravatar import Gravatar
 
-from sqlalchemy.ext.declarative import declarative_base
 from functools import wraps
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
