@@ -1,18 +1,13 @@
 from flask import Flask, render_template, redirect, url_for, flash, request, abort
 from flask_bootstrap import Bootstrap
-from sqlalchemy import Column, Integer, ForeignKey
 from flask_ckeditor import CKEditor
 from datetime import date
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
-from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
+from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user
 from forms import CreatePostForm, Registerform, Loginform, Commentform
 from flask_gravatar import Gravatar
-from flask_wtf import FlaskForm
-from wtforms import StringField, EmailField, PasswordField, SubmitField
-from wtforms.validators import DataRequired
-
 
 from sqlalchemy.ext.declarative import declarative_base
 from functools import wraps
@@ -162,29 +157,6 @@ def about():
 
 @app.route('/contact', methods=['GET','POST']) 
 def contact():
-    # if request.method == 'POST':
-    #     if current_user.is_authenticated:
-    #         user_name = request.form.get('name')
-    #         user_mail = request.form.get('email')
-    #         user_phone = request.form.get('phone')
-    #         user_message = request.form.get('message')
-    #         email_bot = SEND_MAIL(user_name, user_mail, user_phone, user_message)
-    #         message = "Successfully sent your message"
-    #         return render_template("contact.html", message=message)
-    #     else:
-    #         flash("You need to login or register to sendmail")
-    #         return redirect(url_for('lo   # if request.method == 'POST':
-    #     if current_user.is_authenticated:
-    #         user_name = request.form.get('name')
-    #         user_mail = request.form.get('email')
-    #         user_phone = request.form.get('phone')
-    #         user_message = request.form.get('message')
-    #         email_bot = SEND_MAIL(user_name, user_mail, user_phone, user_message)
-    #         message = "Successfully sent your message"
-    #         return render_template("contact.html", message=message)
-    #     else:
-    #         flash("You need to login or register to sendmail")
-    #         return redirect(url_for('login'))gin'))
     return render_template("contact.html",message='',logged_in=current_user.is_authenticated)
 
 @app.route("/new-post", methods=['POST', 'GET'])
