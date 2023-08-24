@@ -68,7 +68,6 @@ class BlogPost(db.Model):
 
     comments = relationship('Comment', back_populates='parent_post')
 
-
 class Comment(db.Model):
     __tablename__ = 'comments'      
     id = db.Column(db.Integer, primary_key=True)
