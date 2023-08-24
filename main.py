@@ -12,7 +12,6 @@ from flask_gravatar import Gravatar
 from flask_wtf import FlaskForm
 from wtforms import StringField, EmailField, PasswordField, SubmitField
 from wtforms.validators import DataRequired
-from mailbot import SEND_MAIL
 
 
 from sqlalchemy.ext.declarative import declarative_base
