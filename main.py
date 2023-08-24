@@ -34,7 +34,6 @@ def admin_only(f):
 @login_manager.user_loader
 def load_user(user_id):
     return db.session.query(User).get(int(user_id))
-
 ##CONFIGURE TABLES
 
 
